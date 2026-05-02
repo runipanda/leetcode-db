@@ -11,16 +11,32 @@ SELECT * FROM Weather;
 
 -- 197. Rising Temperature
 
-
 -- 1. self join
+
 SELECT *
 FROM Weather w1
 JOIN Weather w2
 ON w1.recordDate = w2.recordDate;
 
 -- 2. filter out greater
+
 SELECT w1.id AS id
 FROM Weather w1
 JOIN Weather w2
 ON w1.recordDate = w2.recordDate + INTERVAL '1 day'
-WHERE w1.temperature > w2.temperature
+WHERE w1.temperature > w2.temperature;
+
+-- using window functions find yesterday and yesterday's temperature
+
+WITH cte AS (
+SELECT *,
+    recordDate - INTERVAL '1 day' AS prev_day,
+    lag(recordDate) over(ORDER BY recordDate) AS yesterday,
+    lag(temperature) over(ORDER BY recordDate) AS yesterday_temperature
+FROM Weather
+)
+
+SELECT id
+FROM cte
+WHERE yesterday = prev_day
+AND temperature > yesterday_temperature
