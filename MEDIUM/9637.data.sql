@@ -1,0 +1,48 @@
+DROP TABLE IF EXISTS airbnb_search_details;
+
+CREATE TABLE airbnb_search_details (
+    id bigint,
+    host_since date,
+    price double precision,
+    property_type text,
+    room_type text,
+    amenities text,
+    accommodates bigint,
+    bathrooms bigint,
+    bed_type text,
+    cancellation_policy text,
+    cleaning_fee boolean,
+    city text,
+    host_identity_verified text,
+    host_response_rate text,
+    neighbourhood text,
+    number_of_reviews bigint,
+    review_scores_rating double precision,
+    zipcode bigint,
+    bedrooms bigint,
+    beds bigint
+);
+
+INSERT INTO airbnb_search_details (id, price, property_type, room_type, amenities, accommodates, bathrooms, bed_type, cancellation_policy, cleaning_fee, city, host_identity_verified, host_response_rate, host_since, neighbourhood, number_of_reviews, review_scores_rating, zipcode, bedrooms, beds) VALUES
+(12513361, 555.68, 'Apartment', 'Entire home/apt', '{TV,"Wireless Internet","Air conditioning"}'::text, 2, 1, 'Real Bed', 'flexible', FALSE, 'NYC', 't', '89%', '2015-11-18', 'East Harlem', 38, 100, 10029, 0, 1),
+(7196412, 366.36, 'Cabin', 'Private room', '{"Wireless Internet",Kitchen,Washer,Dryer}'::text, 2, 3, 'Real Bed', 'moderate', FALSE, 'LA', 'f', '100%', '2016-09-10', 'Valley Glen', 14, 91, 91606, 1, 1),
+(16333776, 482.83, 'House', 'Private room', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 2, 1, 'Real Bed', 'strict', TRUE, 'SF', 't', '100%', '2013-12-26', 'Richmond District', 1, 100, 94118, 1, 1),
+(11786412, 448.86, 'Apartment', 'Private room', '{"Wireless Internet","Air conditioning",Kitchen}'::text, 2, 1, 'Real Bed', 'strict', TRUE, 'NYC', 't', '93%', '2010-05-11', 'Williamsburg', 8, 86, 11211, 1, 1),
+(11457577, 506.89, 'Villa', 'Private room', '{TV,Internet,"Wireless Internet"}'::text, 6, 2, 'Real Bed', 'strict', TRUE, 'LA', 't', '70%', '2015-10-22', NULL, 2, 100, 90703, 3, 3),
+(3205158, 897.20, 'Villa', 'Entire home/apt', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 8, 3, 'Real Bed', 'strict', TRUE, 'LA', 'f', '20%', '2014-05-26', 'Topanga', 0, NULL, 90290, 2, 6),
+(5341378, 349.15, 'Villa', 'Private room', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 2, 1, 'Real Bed', 'strict', TRUE, 'LA', 't', '90%', '2015-08-20', 'Hollywood Hills', 1, 100, 90046, 1, 1),
+(659175, 552.93, 'Villa', 'Entire home/apt', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 16, 3, 'Real Bed', 'strict', TRUE, 'LA', 't', '91%', '2016-01-16', 'Long Beach', 8, 89, 90803, 4, 6),
+(5203241, 679.68, 'Villa', 'Entire home/apt', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 6, 2, 'Real Bed', 'strict', TRUE, 'LA', 't', '100%', '2017-08-17', 'Rancho Palos Verdes', 11, 100, 90275, 2, 4),
+(1150889, 1633.51, 'Villa', 'Entire home/apt', '{TV,Internet,"Wireless Internet",Kitchen}'::text, 10, 2, 'Real Bed', 'strict', TRUE, 'LA', 't', '94%', '2015-08-12', 'Malibu', 4, 39, 90265, 2, 2),
+(1882393, 3048.59, 'Villa', 'Entire home/apt', '{TV,Internet,"Wireless Internet",Kitchen}'::text, 6, 1, 'Real Bed', 'moderate', TRUE, 'LA', 't', '90%', '2013-12-06', 'Harbor Gateway', 2, 79, 90501, 2, 2),
+(1552328, 1598.90, 'Villa', 'Entire home/apt', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 4, 1, 'Real Bed', 'strict', TRUE, 'LA', 'f', '100%', '2014-05-20', NULL, 5, 88, 90704, 1, 2),
+(1969850, 9741.76, 'Villa', 'Entire home/apt', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 8, 4, 'Real Bed', 'super_strict_60', TRUE, 'LA', 't', '100%', '2015-01-05', NULL, 0, NULL, 90277, 4, 4),
+(1249746, 4431.75, 'Apartment', 'Private room', '{"Wireless Internet",Kitchen}'::text, 2, 1, 'Real Bed', 'moderate', TRUE, 'NYC', 't', NULL, '2014-01-14', 'Crown Heights', 2, 80, 11238, 1, 1),
+(1177647, 9346.13, 'Villa', 'Private room', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 2, 1, 'Real Bed', 'moderate', TRUE, 'LA', 't', '100%', '2012-11-02', 'Topanga', 6, 100, 91364, 1, 1),
+(1111136, 8544.85, 'Villa', 'Entire home/apt', '{TV,Internet,"Wireless Internet"}'::text, 6, 1, 'Real Bed', 'strict', TRUE, 'LA', 't', '100%', '2014-08-12', 'Temple City', 2, 89, 91780, 2, 4),
+(1575456, 1482.83, 'Apartment', 'Entire home/apt', '{"Wireless Internet","Air conditioning"}'::text, 4, 1, 'Real Bed', 'moderate', TRUE, 'NYC', 'f', '100%', '2017-06-07', 'Bedford-Stuyvesant', 0, NULL, 11216, 1, 1),
+(1447147, 4313.55, 'House', 'Shared room', '{}'::text, 1, 1, 'Real Bed', 'flexible', TRUE, 'LA', 't', '100%', '2013-12-20', NULL, 0, NULL, 91405, 1, 1),
+(1199851, 3438.20, 'Apartment', 'Entire home/apt', '{TV,Internet,"Wireless Internet"}'::text, 2, 1, 'Real Bed', 'strict', TRUE, 'NYC', 't', '80%', '2013-12-21', 'Harlem', 1, 18, 10027, 0, 1),
+(1320748, 4368.89, 'House', 'Shared room', '{TV,"Cable TV",Internet,"Wireless Internet"}'::text, 4, 1, 'Couch', 'strict', TRUE, 'LA', 't', '25%', '2016-12-05', 'Hollywood', 0, NULL, 90028, 1, 1),
+(1178370, 7233.73, 'House', 'Private room', '{Internet,"Wireless Internet"}'::text, 2, 1, 'Real Bed', 'moderate', FALSE, 'LA', 'f', '98%', '2017-07-02', NULL, 0, NULL, 91770, 1, 1),
+(1178233, 9641.74, 'House', 'Private room', '{TV,"Cable TV","Wireless Internet"}'::text, 2, 1, 'Real Bed', 'moderate', TRUE, 'NYC', 'f', '100%', '2015-05-27', 'Richmond Hill', 7, 49, 11419, 1, 1);
